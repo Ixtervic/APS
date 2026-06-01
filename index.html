@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evidencia de Estudio · APS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- TOP NAV -->
+    <nav class="topnav" id="topnav">
+      <div class="topnav__brand">
+        <div class="topnav__dot"></div>
+        <span class="topnav__label">APS · Hernandez Cruz Julio Hazel</span>
+      </div>
+
+      <!-- Chapter menu -->
+      <div class="chapter-selector" id="chapterSelector">
+        <button
+          class="chapter-selector__btn"
+          id="chapterBtn"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            />
+          </svg>
+          <span id="chapterBtnLabel">Capítulo 0</span>
+          <svg
+            class="chapter-selector__caret"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        <div class="chapter-selector__menu" id="chapterMenu" aria-hidden="true">
+          <div class="chapter-menu__header">Capítulos disponibles</div>
+          <a
+            href="index.html"
+            class="chapter-menu__item chapter-menu__item--active"
+          >
+            <span class="chapter-menu__num">00</span>
+            <div>
+              <span class="chapter-menu__title">Capítulo 0</span>
+              <span class="chapter-menu__sub"
+                >Fundamentos y Conceptos Básicos</span
+              >
+            </div>
+            <span class="chapter-menu__status chapter-menu__status--done"
+              >Listo</span
+            >
+          </a>
+          <div class="chapter-menu__item chapter-menu__item--soon">
+            <span class="chapter-menu__num">01</span>
+            <div>
+              <span class="chapter-menu__title">Capítulo 1</span>
+              <span class="chapter-menu__sub">Próximamente</span>
+            </div>
+            <span class="chapter-menu__status chapter-menu__status--soon"
+              >Pronto</span
+            >
+          </div>
+          <div class="chapter-menu__item chapter-menu__item--soon">
+            <span class="chapter-menu__num">02</span>
+            <div>
+              <span class="chapter-menu__title">Capítulo 2</span>
+              <span class="chapter-menu__sub">Próximamente</span>
+            </div>
+            <span class="chapter-menu__status chapter-menu__status--soon"
+              >Pronto</span
+            >
+          </div>
+          <div class="chapter-menu__item chapter-menu__item--soon">
+            <span class="chapter-menu__num">03</span>
+            <div>
+              <span class="chapter-menu__title">Capítulo 3</span>
+              <span class="chapter-menu__sub">Próximamente</span>
+            </div>
+            <span class="chapter-menu__status chapter-menu__status--soon"
+              >Pronto</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Section links -->
+      <ul class="topnav__links">
+        <li><a href="#resumen">Resumen</a></li>
+        <li><a href="#definicion">Definición</a></li>
+        <li><a href="#objetivos">Objetivos</a></li>
+        <li><a href="#caracteristicas">Características</a></li>
+        <li><a href="#puntosclave">Puntos Clave</a></li>
+        <li><a href="#ciclo">Ciclo de Vida</a></li>
+        <li><a href="#conclusiones">Conclusiones</a></li>
+      </ul>
+
+      <button
+        class="topnav__hamburger"
+        id="hamburger"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <div class="mobile-drawer__group-label">Capítulos</div>
+      <a href="index.html" class="drawer-chapter drawer-chapter--active"
+        >Capítulo 0 · Fundamentos y Conceptos Básicos</a
+      >
+      <span class="drawer-chapter drawer-chapter--soon"
+        >Capítulo 1 · Próximamente</span
+      >
+      <span class="drawer-chapter drawer-chapter--soon"
+        >Capítulo 2 · Próximamente</span
+      >
+      <span class="drawer-chapter drawer-chapter--soon"
+        >Capítulo 3 · Próximamente</span
+      >
+      <div class="mobile-drawer__group-label" style="margin-top: 1.2rem">
+        Secciones
+      </div>
+      <a href="#resumen" class="drawer-link">Resumen Ejecutivo</a>
+      <a href="#definicion" class="drawer-link">¿Qué es un Proyecto?</a>
+      <a href="#objetivos" class="drawer-link">Objetivos</a>
+      <a href="#caracteristicas" class="drawer-link">Características</a>
+      <a href="#puntosclave" class="drawer-link">Puntos Clave</a>
+      <a href="#ciclo" class="drawer-link">Ciclo de Vida</a>
+      <a href="#conclusiones" class="drawer-link">Conclusiones</a>
+    </div>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero__bg">
+          <div class="geo geo--grid"></div>
+          <div class="geo geo--lines"></div>
+          <div class="geo geo--box geo--box-1"></div>
+          <div class="geo geo--box geo--box-2"></div>
+          <div class="geo geo--circle"></div>
+          <div class="floatcard floatcard--a">
+            <div class="floatcard__label">ELEMENTOS</div>
+            <div class="floatcard__val">6</div>
+          </div>
+          <div class="floatcard floatcard--b">
+            <div class="floatcard__label">CARACTERÍSTICAS</div>
+            <div class="floatcard__val">7</div>
+          </div>
+          <div class="floatcard floatcard--c">
+            <div class="floatcard__label">FASES DEL CICLO</div>
+            <div class="floatcard__val">5</div>
+          </div>
+          <div class="floatcard floatcard--d">
+            <div class="floatcard__label">OBJETIVOS</div>
+            <div class="floatcard__val">4</div>
+          </div>
+        </div>
+        <div class="hero__content">
+          <div class="hero__eyebrow reveal">
+            <span class="hero__badge">Capítulo 0</span>
+            <span class="hero__eyebrow-text"
+              >Guía Rápida de Planificación de Proyectos</span
+            >
+          </div>
+          <h1 class="hero__title reveal">
+            Análisis de los<br />
+            Fundamentos y <em>Conceptos<br />Básicos</em> de un Proyecto
+          </h1>
+          <div class="hero__meta reveal">
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Materia</span>
+              <span class="hero__meta-val"
+                >Administración de Proyectos de Software</span
+              >
+            </div>
+            <div class="hero__meta-sep"></div>
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Alumno</span>
+              <span class="hero__meta-val">Hernandez Cruz Julio Hazel</span>
+            </div>
+            <div class="hero__meta-sep"></div>
+            <div class="hero__meta-item">
+              <span class="hero__meta-label">Fecha</span>
+              <span class="hero__meta-val">31 de mayo de 2026</span>
+            </div>
+          </div>
+          <a href="#resumen" class="hero__cta reveal">
+            <span>Ver análisis</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- RESUMEN EJECUTIVO -->
+      <section class="section exec-summary" id="resumen">
+        <div class="container">
+          <div class="section-label reveal">01 · Resumen Ejecutivo</div>
+          <div class="exec-card reveal">
+            <div class="exec-card__stripe"></div>
+            <div class="exec-card__body">
+              <h2 class="exec-card__heading">Executive Summary</h2>
+              <p class="exec-card__text">
+                El Capítulo 0 de la guía establece los cimientos necesarios para
+                garantizar el éxito en la gestión y ejecución de cualquier
+                proyecto. Se enfoca en clarificar qué es un proyecto, cuáles son
+                sus objetivos fundamentales y qué características lo distinguen
+                de los procesos rutinarios de producción. Comprender estas
+                peculiaridades es el primer paso crítico antes de abordar el
+                diseño y la planificación técnica.
+              </p>
+              <div class="exec-stats">
+                <div class="exec-stat">
+                  <span class="exec-stat__num">6</span>
+                  <span class="exec-stat__label">Elementos esenciales</span>
+                </div>
+                <div class="exec-stat">
+                  <span class="exec-stat__num">4</span>
+                  <span class="exec-stat__label">Objetivos clave</span>
+                </div>
+                <div class="exec-stat">
+                  <span class="exec-stat__num">7</span>
+                  <span class="exec-stat__label">Características</span>
+                </div>
+                <div class="exec-stat">
+                  <span class="exec-stat__num">5</span>
+                  <span class="exec-stat__label">Fases del ciclo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN A – ¿QUÉ ES UN PROYECTO? -->
+      <section class="section definicion" id="definicion">
+        <div class="container">
+          <div class="section-label reveal">02 · Sección A</div>
+          <h2 class="section-title reveal">¿Qué es un Proyecto?</h2>
+          <p class="section-intro reveal">
+            Un proyecto es un
+            <strong
+              >conjunto de actividades interrelacionadas y coordinadas</strong
+            >
+            para alcanzar objetivos específicos con recursos y tiempo limitados.
+            A diferencia de los procesos repetitivos de producción, cada
+            proyecto es único: posee un inicio y un fin definidos, y concluye al
+            alcanzar sus metas. Todo proyecto se define por seis elementos
+            esenciales:
+          </p>
+          <div class="elements-grid">
+            <article class="elem-card reveal" style="--delay: 0.04s">
+              <div class="elem-card__num">01</div>
+              <div class="elem-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="elem-card__title">Logro de objetivos o resultados</h3>
+              <p class="elem-card__desc">
+                El fin técnico o servicio a prestar que justifica la existencia
+                del proyecto.
+              </p>
+            </article>
+            <article class="elem-card reveal" style="--delay: 0.08s">
+              <div class="elem-card__num">02</div>
+              <div class="elem-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+              </div>
+              <h3 class="elem-card__title">Actividades y plan de trabajo</h3>
+              <p class="elem-card__desc">
+                La secuencia estructurada de tareas a realizar para alcanzar el
+                objetivo del proyecto.
+              </p>
+            </article>
+            <article class="elem-card reveal" style="--delay: 0.12s">
+              <div class="elem-card__num">03</div>
+              <div class="elem-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                </svg>
+              </div>
+              <h3 class="elem-card__title">Recursos o elementos necesarios</h3>
+              <p class="elem-card__desc">
+                Medios humanos y materiales asignados para llevar a cabo el
+                trabajo planificado.
+              </p>
+            </article>
+            <article class="elem-card reveal" style="--delay: 0.16s">
+              <div class="elem-card__num">04</div>
+              <div class="elem-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3 class="elem-card__title">Tiempo</h3>
+              <p class="elem-card__desc">
+                Plazo definido de inicio y fin; el proyecto no es un proceso
+                continuo ni indefinido.
+              </p>
+            </article>
+            <article class="elem-card reveal" style="--delay: 0.2s">
+              <div class="elem-card__num">05</div>
+              <div class="elem-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="elem-card__title">Coste y recursos financieros</h3>
+              <p class="elem-card__desc">
+                Presupuesto asignado y limitado que enmarca todas las decisiones
+                económicas del proyecto.
+              </p>
+            </article>
+            <article class="elem-card reveal" style="--delay: 0.24s">
+              <div class="elem-card__num">06</div>
+              <div class="elem-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                </svg>
+              </div>
+              <h3 class="elem-card__title">Intención de modificar algo</h3>
+              <p class="elem-card__desc">
+                Resolución de un problema concreto o cobertura de una necesidad
+                identificada en la organización.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN B – OBJETIVOS -->
+      <section class="section objetivos" id="objetivos">
+        <div class="container">
+          <div class="section-label reveal">03 · Sección B</div>
+          <h2 class="section-title reveal">Objetivos del Proyecto</h2>
+          <p class="section-intro reveal">
+            Todo proyecto persigue básicamente cuatro objetivos que deben
+            equilibrarse simultáneamente: la
+            <strong>Cuádruple Restricción</strong>. El fracaso en cualquiera de
+            ellos compromete el conjunto del proyecto.
+          </p>
+          <div class="quad-grid reveal">
+            <article class="quad-card quad-card--1">
+              <div class="quad-card__num">01</div>
+              <div class="quad-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+              </div>
+              <h3 class="quad-card__title">Resultado Final</h3>
+              <p class="quad-card__desc">
+                Conseguir el objetivo más significativo: la obra, producto o
+                servicio que da sentido al proyecto.
+              </p>
+              <div class="quad-card__tag">Entregable principal</div>
+            </article>
+            <article class="quad-card quad-card--2">
+              <div class="quad-card__num">02</div>
+              <div class="quad-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3 class="quad-card__title">Plazo de Realización</h3>
+              <p class="quad-card__desc">
+                Cumplir con el tiempo establecido. El incumplimiento del
+                cronograma afecta directamente el coste y la satisfacción del
+                cliente.
+              </p>
+              <div class="quad-card__tag">Tiempo</div>
+            </article>
+            <article class="quad-card quad-card--3">
+              <div class="quad-card__num">03</div>
+              <div class="quad-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="quad-card__title">Coste Previsto</h3>
+              <p class="quad-card__desc">
+                Mantenerse dentro del presupuesto financiero aprobado. Las
+                desviaciones erosionan la rentabilidad del proyecto.
+              </p>
+              <div class="quad-card__tag">Presupuesto</div>
+            </article>
+            <article class="quad-card quad-card--4">
+              <div class="quad-card__num">04</div>
+              <div class="quad-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
+              <h3 class="quad-card__title">
+                Satisfacción del Usuario o Cliente
+              </h3>
+              <p class="quad-card__desc">
+                Responder al diagnóstico previo y a las necesidades
+                identificadas del usuario. Elemento de calidad creciente en la
+                gestión moderna de proyectos.
+              </p>
+              <div class="quad-card__tag">Calidad</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN C – 7 CARACTERÍSTICAS -->
+      <section class="section caracteristicas" id="caracteristicas">
+        <div class="container">
+          <div class="section-label reveal">04 · Sección C</div>
+          <h2 class="section-title reveal">
+            Las 7 Características de los Proyectos
+          </h2>
+          <p class="section-intro reveal">
+            Los proyectos poseen particularidades que los diferencian
+            fundamentalmente de cualquier proceso operativo repetitivo y
+            determinan su complejidad de gestión.
+          </p>
+          <div class="char-list">
+            <article class="char-item reveal" style="--delay: 0.03s">
+              <div class="char-item__num">01</div>
+              <div class="char-item__content">
+                <h3 class="char-item__title">Entidad, Tamaño y Alcance</h3>
+                <p class="char-item__desc">
+                  Son inversiones o resultados de gran trascendencia para la
+                  organización, cuya magnitud los distingue de las tareas
+                  operativas cotidianas.
+                </p>
+              </div>
+              <div class="char-item__tag">Envergadura</div>
+            </article>
+            <article class="char-item reveal" style="--delay: 0.06s">
+              <div class="char-item__num">02</div>
+              <div class="char-item__content">
+                <h3 class="char-item__title">
+                  Medios Importantes, Variados y Cambiantes
+                </h3>
+                <p class="char-item__desc">
+                  Requieren una gran diversidad de recursos —técnicos, humanos,
+                  materiales— que varían en tipo e intensidad según la fase del
+                  proyecto.
+                </p>
+              </div>
+              <div class="char-item__tag">Recursos</div>
+            </article>
+            <article class="char-item reveal" style="--delay: 0.09s">
+              <div class="char-item__num">03</div>
+              <div class="char-item__content">
+                <h3 class="char-item__title">Discontinuidad</h3>
+                <p class="char-item__desc">
+                  Se ejecutan una sola vez y no de forma repetitiva. Cada
+                  proyecto es un esfuerzo único e irrepetible con inicio y fin
+                  propios.
+                </p>
+              </div>
+              <div class="char-item__tag">Singularidad</div>
+            </article>
+            <article class="char-item reveal" style="--delay: 0.12s">
+              <div class="char-item__num">04</div>
+              <div class="char-item__content">
+                <h3 class="char-item__title">Dinamismo y Evolución</h3>
+                <p class="char-item__desc">
+                  Implican inestabilidad permanente y cambios frecuentes a lo
+                  largo de su desarrollo, lo que exige una gestión adaptativa
+                  continua.
+                </p>
+              </div>
+              <div class="char-item__tag">Cambio</div>
+            </article>
+            <article class="char-item reveal" style="--delay: 0.15s">
+              <div class="char-item__num">05</div>
+              <div class="char-item__content">
+                <h3 class="char-item__title">Irreversibilidad</h3>
+                <p class="char-item__desc">
+                  Las decisiones tomadas tienen consecuencias difíciles de
+                  anular sin grandes pérdidas económicas. Cada elección
+                  compromete el camino futuro del proyecto.
+                </p>
+              </div>
+              <div class="char-item__tag">Decisión</div>
+            </article>
+            <article class="char-item reveal" style="--delay: 0.18s">
+              <div class="char-item__num">06</div>
+              <div class="char-item__content">
+                <h3 class="char-item__title">Riesgo</h3>
+                <p class="char-item__desc">
+                  Conllevan la posibilidad de fallos técnicos, pérdidas
+                  económicas o daños a la imagen institucional que deben
+                  identificarse y gestionarse desde el inicio.
+                </p>
+              </div>
+              <div class="char-item__tag">Incertidumbre</div>
+            </article>
+            <article class="char-item reveal" style="--delay: 0.21s">
+              <div class="char-item__num">07</div>
+              <div class="char-item__content">
+                <h3 class="char-item__title">Influencias Externas</h3>
+                <p class="char-item__desc">
+                  Están sujetos a presiones del entorno social, político o
+                  económico que pueden modificar su alcance, plazos o viabilidad
+                  sin intervención del equipo de proyecto.
+                </p>
+              </div>
+              <div class="char-item__tag">Entorno</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN D – PUNTOS CLAVE -->
+      <section class="section puntosclave" id="puntosclave">
+        <div class="container">
+          <div class="section-label reveal">05 · Sección D</div>
+          <h2 class="section-title reveal">6 Puntos Clave de la Gestión</h2>
+          <p class="section-intro reveal">
+            Para una administración adecuada, todo proyecto debe considerar los
+            siguientes aspectos críticos que determinan su viabilidad y éxito.
+          </p>
+          <div class="pk-grid">
+            <article class="pk-card reveal" style="--delay: 0.04s">
+              <div class="pk-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="pk-card__title">Objetivos únicos y concretos</h3>
+              <p class="pk-card__desc">
+                Un conjunto único de objetivos que, al ser logrados, marcan el
+                fin natural del proyecto.
+              </p>
+            </article>
+            <article class="pk-card reveal" style="--delay: 0.08s">
+              <div class="pk-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3 class="pk-card__title">Duración limitada y bien definida</h3>
+              <p class="pk-card__desc">
+                El proyecto opera en un marco temporal delimitado, con fechas de
+                inicio y cierre establecidas.
+              </p>
+            </article>
+            <article class="pk-card reveal" style="--delay: 0.12s">
+              <div class="pk-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
+              <h3 class="pk-card__title">Jefe o Líder de Proyecto</h3>
+              <p class="pk-card__desc">
+                Es imprescindible contar con un responsable que coordine, decida
+                y responda ante todos los interesados.
+              </p>
+            </article>
+            <article class="pk-card reveal" style="--delay: 0.16s">
+              <div class="pk-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="pk-card__title">Medios asignados y limitados</h3>
+              <p class="pk-card__desc">
+                El presupuesto definido enmarca las decisiones; no existe acceso
+                ilimitado a recursos económicos.
+              </p>
+            </article>
+            <article class="pk-card reveal" style="--delay: 0.2s">
+              <div class="pk-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="pk-card__title">Integración de esfuerzos</h3>
+              <p class="pk-card__desc">
+                Requiere la participación coordinada de todos los sectores
+                afectados de la empresa o institución.
+              </p>
+            </article>
+            <article class="pk-card reveal" style="--delay: 0.24s">
+              <div class="pk-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M4 4v16h16" />
+                  <path d="M4 20l4-4 4 4 4-8 4-4" />
+                </svg>
+              </div>
+              <h3 class="pk-card__title">Cambio organizacional</h3>
+              <p class="pk-card__desc">
+                El proyecto representa una transformación fundamental en el
+                funcionamiento de la organización.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN E – CICLO DE VIDA -->
+      <section class="section ciclo" id="ciclo">
+        <div class="container">
+          <div class="section-label reveal">06 · Sección E</div>
+          <h2 class="section-title reveal">Ciclo de Vida del Proyecto</h2>
+          <p class="section-intro reveal">
+            El desarrollo de cualquier proyecto sigue una secuencia lógica de
+            cinco etapas que articulan su evolución desde la definición inicial
+            hasta el cierre formal.
+          </p>
+          <div class="lifecycle reveal">
+            <div class="lc-item">
+              <div class="lc-item__head">
+                <div class="lc-item__circle">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                    />
+                  </svg>
+                </div>
+                <div class="lc-item__connector"></div>
+              </div>
+              <div class="lc-item__body">
+                <div class="lc-item__num">Fase 01</div>
+                <h3 class="lc-item__title">Diseño</h3>
+                <p class="lc-item__desc">
+                  Definición de objetivos, especificaciones técnicas y alcance
+                  del proyecto. Se establece qué se quiere lograr y cómo se
+                  medirá el éxito.
+                </p>
+              </div>
+            </div>
+            <div class="lc-item">
+              <div class="lc-item__head">
+                <div class="lc-item__circle">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                    />
+                  </svg>
+                </div>
+                <div class="lc-item__connector"></div>
+              </div>
+              <div class="lc-item__body">
+                <div class="lc-item__num">Fase 02</div>
+                <h3 class="lc-item__title">Planificación</h3>
+                <p class="lc-item__desc">
+                  Análisis de riesgos, definición de tareas, asignación de
+                  recursos y elaboración del plan de seguimiento y control.
+                </p>
+              </div>
+            </div>
+            <div class="lc-item">
+              <div class="lc-item__head">
+                <div class="lc-item__circle">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                    />
+                    <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div class="lc-item__connector"></div>
+              </div>
+              <div class="lc-item__body">
+                <div class="lc-item__num">Fase 03</div>
+                <h3 class="lc-item__title">Ejecución</h3>
+                <p class="lc-item__desc">
+                  Puesta en marcha de lo planificado, combinando la gestión del
+                  equipo con el trabajo técnico concreto de cada área.
+                </p>
+              </div>
+            </div>
+            <div class="lc-item">
+              <div class="lc-item__head">
+                <div class="lc-item__circle">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div class="lc-item__connector"></div>
+              </div>
+              <div class="lc-item__body">
+                <div class="lc-item__num">Fase 04</div>
+                <h3 class="lc-item__title">Seguimiento y Control</h3>
+                <p class="lc-item__desc">
+                  Monitorización permanente para detectar desviaciones respecto
+                  al plan y replanificar cuando sea necesario.
+                </p>
+              </div>
+            </div>
+            <div class="lc-item lc-item--last">
+              <div class="lc-item__head">
+                <div class="lc-item__circle lc-item__circle--final">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="lc-item__body">
+                <div class="lc-item__num">Fase 05</div>
+                <h3 class="lc-item__title">Evaluación y Cierre</h3>
+                <p class="lc-item__desc">
+                  Balance de resultados, elaboración del informe final y
+                  disolución formal del equipo de proyecto.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONCLUSIONES -->
+      <section class="section conclusiones" id="conclusiones">
+        <div class="container">
+          <div class="section-label reveal">07 · Conclusiones</div>
+          <div class="conc-layout">
+            <div class="conc-left reveal">
+              <h2 class="conc-title">Síntesis del Análisis</h2>
+              <div class="conc-quote">
+                <div class="conc-quote__bar"></div>
+                <p>
+                  El adecuado análisis del Capítulo 0 permite concluir que un
+                  proyecto no es simplemente una lista de tareas, sino un
+                  <strong>esfuerzo estratégico y limitado en el tiempo</strong>
+                  que requiere una definición precisa de objetivos desde su
+                  inicio. La capacidad de anticipar riesgos y entender la
+                  irreversibilidad de las decisiones es lo que diferencia a un
+                  gestor profesional de un ejecutor improvisado.
+                </p>
+              </div>
+              <div class="conc-pillars">
+                <div class="conc-pillar">
+                  <div class="conc-pillar__bar" style="height: 80%"></div>
+                  <span>Definición</span>
+                </div>
+                <div class="conc-pillar">
+                  <div class="conc-pillar__bar" style="height: 65%"></div>
+                  <span>Planificación</span>
+                </div>
+                <div class="conc-pillar">
+                  <div class="conc-pillar__bar" style="height: 90%"></div>
+                  <span>Ejecución</span>
+                </div>
+                <div class="conc-pillar">
+                  <div class="conc-pillar__bar" style="height: 55%"></div>
+                  <span>Control</span>
+                </div>
+                <div class="conc-pillar">
+                  <div class="conc-pillar__bar" style="height: 70%"></div>
+                  <span>Cierre</span>
+                </div>
+              </div>
+            </div>
+            <div class="conc-right reveal">
+              <div class="conc-checklist">
+                <div class="conc-checklist__title">Aprendizajes clave</div>
+                <div class="conc-check">
+                  <div class="conc-check__dot"></div>
+                  <span>Un proyecto siempre tiene inicio y fin definidos</span>
+                </div>
+                <div class="conc-check">
+                  <div class="conc-check__dot"></div>
+                  <span
+                    >La Cuádruple Restricción debe mantenerse en
+                    equilibrio</span
+                  >
+                </div>
+                <div class="conc-check">
+                  <div class="conc-check__dot"></div>
+                  <span>Las decisiones son en gran medida irreversibles</span>
+                </div>
+                <div class="conc-check">
+                  <div class="conc-check__dot"></div>
+                  <span>El liderazgo del proyecto es imprescindible</span>
+                </div>
+                <div class="conc-check">
+                  <div class="conc-check__dot"></div>
+                  <span>El entorno externo puede modificar el alcance</span>
+                </div>
+                <div class="conc-check">
+                  <div class="conc-check__dot"></div>
+                  <span>Cada proyecto es único e irrepetible</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REFERENCIAS -->
+      <section class="section referencias">
+        <div class="container">
+          <div class="section-label reveal">08 · Referencias</div>
+          <h2 class="section-title reveal">Bibliografía</h2>
+          <div class="ref-list reveal">
+            <article class="ref-item">
+              <div class="ref-item__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="ref-item__citation">
+                  Oskoz Izazelaia, J. M. (Coord.).
+                  <em>Guía rápida de «Planificación de Proyectos»</em>.
+                  Instituto Vasco de Cualificaciones y Formación Profesional
+                  (KEI-IVAC).
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span class="footer__copy"
+          >Administración de Proyectos de Software · 2026</span
+        >
+        <span class="footer__name">Hernandez Cruz Julio Hazel</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
